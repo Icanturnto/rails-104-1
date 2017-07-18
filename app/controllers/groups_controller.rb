@@ -22,6 +22,7 @@ end
     @group.user = current_user
 
   if @group.save
+    current_user.join!(@grou)
     redirect_to groups_path
   else
     render :new
